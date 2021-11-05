@@ -15,7 +15,7 @@ vagrant-destroy:
 vagrant-up:
 	@source venv/bin/activate && vagrant up
 	@mv -f ${HOME}/.kube/config ${HOME}/.kube/config-old || true
-	cp -v inventory/my_lab/artifacts/admin.conf ${HOME}/.kube/config
+	cp -v inventory/lab/artifacts/admin.conf ${HOME}/.kube/config
 
 vagrant-upgrade:
 	ansible-playbook -i .vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory --become cluster.yml
